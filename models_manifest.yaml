@@ -1,0 +1,51 @@
+# =====================================================
+#  ComfyUI Wan 2.2 + LightX2V Workflow Models Manifest
+#  (based on NextDiffusion.ai Fast Image-to-Video guide)
+# =====================================================
+
+diffusion_models:
+  - name: Wan2.2 I2V (Low Noise)
+    repo: Wan-AI/Wan2.2-I2V-A14B
+    file: wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors
+    url: https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B/resolve/main/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors
+    dest: /workspace/ComfyUI/models/diffusion_models/
+
+  - name: Wan2.2 I2V (High Noise)
+    repo: Wan-AI/Wan2.2-I2V-A14B
+    file: wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors
+    url: https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B/resolve/main/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors
+    dest: /workspace/ComfyUI/models/diffusion_models/
+
+vae:
+  - name: Wan 2.1 VAE
+    repo: Comfy-Org/Wan_2.1_ComfyUI_repackaged
+    file: wan_2.1_vae.safetensors
+    url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/wan_2.1_vae.safetensors
+    dest: /workspace/ComfyUI/models/vae/
+
+text_encoders:
+  - name: UMT5 XXL Encoder
+    repo: Comfy-Org/Wan_2.1_ComfyUI_repackaged
+    file: umt5_xxl_fp8_e4m3fn_scaled.safetensors
+    url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+    dest: /workspace/ComfyUI/models/text_encoders/
+
+lora:
+  - name: LightX2V LoRA (Low)
+    repo: lightx2v/Wan2.2-Lightning
+    file: Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
+    url: https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
+    dest: /workspace/ComfyUI/lora/
+
+  - name: LightX2V LoRA (High)
+    repo: lightx2v/Wan2.2-Lightning
+    file: Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
+    url: https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
+    dest: /workspace/ComfyUI/lora/
+
+frame_interpolation:
+  - name: RIFE Interpolation
+    repo: hzwer/arXiv2020-RIFE
+    file: rife47.pth
+    url: https://huggingface.co/hzwer/arXiv2020-RIFE/resolve/main/rife47.pth
+    dest: /workspace/ComfyUI/models/frame_interpolation/

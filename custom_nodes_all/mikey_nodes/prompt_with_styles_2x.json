@@ -1,0 +1,996 @@
+{
+  "last_node_id": 21,
+  "last_link_id": 80,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        0,
+        640
+      ],
+      "size": {
+        "0": 320,
+        "1": 100
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            77
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Base Checkpoint",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0_0.9vae.safetensors"
+      ],
+      "color": "#422440",
+      "bgcolor": "#633660"
+    },
+    {
+      "id": 3,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        0,
+        780
+      ],
+      "size": {
+        "0": 320,
+        "1": 100
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            39,
+            53,
+            58
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "title": "Refiner Checkpoint",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_refiner_1.0_0.9vae.safetensors"
+      ],
+      "color": "#422432",
+      "bgcolor": "#63364b"
+    },
+    {
+      "id": 5,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        1610,
+        90
+      ],
+      "size": {
+        "0": 310,
+        "1": 546
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 37
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 70
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 72
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "disable",
+        761705123412141,
+        "randomize",
+        50,
+        8.5,
+        "dpmpp_2m",
+        "simple",
+        35,
+        50,
+        "disable"
+      ],
+      "color": "#282442",
+      "bgcolor": "#3c3663"
+    },
+    {
+      "id": 14,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        1930,
+        90
+      ],
+      "size": {
+        "0": 320,
+        "1": 546
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 75
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 67
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 69
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            80
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        32784357353480,
+        "randomize",
+        16,
+        9.5,
+        "dpmpp_2m",
+        "simple",
+        9,
+        16,
+        "enable"
+      ],
+      "color": "#362442",
+      "bgcolor": "#513663"
+    },
+    {
+      "id": 16,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1290,
+        -30
+      ],
+      "size": {
+        "0": 310,
+        "1": 80
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            57
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscale Model (x4)",
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "lollypop.pth"
+      ],
+      "color": "#24422d",
+      "bgcolor": "#366343"
+    },
+    {
+      "id": 4,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        1290,
+        90
+      ],
+      "size": {
+        "0": 310,
+        "1": 546
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 74
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 66
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 68
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            36
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        1065951603519661,
+        "randomize",
+        25,
+        6.5,
+        "dpmpp_2s_ancestral",
+        "simple",
+        0,
+        18,
+        "enable"
+      ],
+      "color": "#242d42",
+      "bgcolor": "#364463"
+    },
+    {
+      "id": 13,
+      "type": "Save Image With Prompt Data",
+      "pos": [
+        330,
+        -120
+      ],
+      "size": {
+        "0": 950,
+        "1": 1000
+      },
+      "flags": {
+        "pinned": false,
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 40
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": 64,
+          "widget": {
+            "name": "positive_prompt",
+            "config": [
+              "STRING",
+              {
+                "default": "Positive Prompt"
+              }
+            ]
+          }
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "link": 65,
+          "widget": {
+            "name": "negative_prompt",
+            "config": [
+              "STRING",
+              {
+                "default": "Negative Prompt"
+              }
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Save Image With Prompt Data"
+      },
+      "widgets_values": [
+        "Positive Prompt",
+        "Negative Prompt"
+      ],
+      "color": "#423124",
+      "bgcolor": "#634a36"
+    },
+    {
+      "id": 21,
+      "type": "Prompt With Style V3",
+      "pos": [
+        0,
+        -120
+      ],
+      "size": {
+        "0": 320,
+        "1": 720
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "base_model",
+          "type": "MODEL",
+          "link": 77
+        },
+        {
+          "name": "clip_base",
+          "type": "CLIP",
+          "link": 78
+        },
+        {
+          "name": "clip_refiner",
+          "type": "CLIP",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "base_model",
+          "type": "MODEL",
+          "links": [
+            74,
+            75
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            76
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "base_pos_cond",
+          "type": "CONDITIONING",
+          "links": [
+            66,
+            67
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "base_neg_cond",
+          "type": "CONDITIONING",
+          "links": [
+            68,
+            69
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "refiner_pos_cond",
+          "type": "CONDITIONING",
+          "links": [
+            70
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "refiner_neg_cond",
+          "type": "CONDITIONING",
+          "links": [
+            72
+          ],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": [
+            64
+          ],
+          "shape": 3,
+          "slot_index": 6
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 7
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Prompt With Style V3"
+      },
+      "widgets_values": [
+        "a cat sitting on top of a helloween pumpkin, cementry in background, dramatic purple lighting, vector art, tshirt design, illustration, black background",
+        "",
+        "16:9 [1344x768 landscape]",
+        "false",
+        "true",
+        1024,
+        1024,
+        1,
+        483033378703948,
+        "randomize",
+        "4x"
+      ],
+      "color": "#422424",
+      "bgcolor": "#633636"
+    },
+    {
+      "id": 17,
+      "type": "VAEDecode",
+      "pos": [
+        1290,
+        -120
+      ],
+      "size": {
+        "0": 310,
+        "1": 50
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 60
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 53,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            55
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "VAE Decode 1st",
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#424024",
+      "bgcolor": "#636036"
+    },
+    {
+      "id": 18,
+      "type": "VAEEncode",
+      "pos": [
+        1940,
+        -120
+      ],
+      "size": [
+        310,
+        50
+      ],
+      "flags": {
+        "pinned": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 63
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "color": "#294224",
+      "bgcolor": "#3d6336"
+    },
+    {
+      "id": 20,
+      "type": "ImageScaleBy",
+      "pos": [
+        1610,
+        -30
+      ],
+      "size": [
+        310,
+        80
+      ],
+      "flags": {
+        "pinned": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Reduce Image to 2x",
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        0.5
+      ],
+      "color": "#24423b",
+      "bgcolor": "#366359"
+    },
+    {
+      "id": 19,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        1610,
+        -120
+      ],
+      "size": [
+        310,
+        50
+      ],
+      "flags": {
+        "pinned": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 57,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscale Img",
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "color": "#374224",
+      "bgcolor": "#526336"
+    },
+    {
+      "id": 12,
+      "type": "VAEDecode",
+      "pos": [
+        1940,
+        -30
+      ],
+      "size": [
+        310,
+        80
+      ],
+      "flags": {
+        "pinned": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 80
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "VAE Decode 2nd",
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#243c42",
+      "bgcolor": "#365a63"
+    }
+  ],
+  "links": [
+    [
+      36,
+      4,
+      0,
+      5,
+      3,
+      "LATENT"
+    ],
+    [
+      37,
+      3,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      39,
+      3,
+      2,
+      12,
+      1,
+      "VAE"
+    ],
+    [
+      40,
+      12,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      53,
+      3,
+      2,
+      17,
+      1,
+      "VAE"
+    ],
+    [
+      55,
+      17,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      57,
+      16,
+      0,
+      19,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      58,
+      3,
+      2,
+      18,
+      1,
+      "VAE"
+    ],
+    [
+      60,
+      5,
+      0,
+      17,
+      0,
+      "LATENT"
+    ],
+    [
+      61,
+      18,
+      0,
+      14,
+      3,
+      "LATENT"
+    ],
+    [
+      62,
+      19,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      63,
+      20,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      21,
+      6,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      65,
+      21,
+      7,
+      13,
+      2,
+      "STRING"
+    ],
+    [
+      66,
+      21,
+      2,
+      4,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      67,
+      21,
+      2,
+      14,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      68,
+      21,
+      3,
+      4,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      69,
+      21,
+      3,
+      14,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      70,
+      21,
+      4,
+      5,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      72,
+      21,
+      5,
+      5,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      74,
+      21,
+      0,
+      4,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      21,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      76,
+      21,
+      1,
+      4,
+      3,
+      "LATENT"
+    ],
+    [
+      77,
+      2,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      78,
+      2,
+      1,
+      21,
+      1,
+      "CLIP"
+    ],
+    [
+      79,
+      3,
+      1,
+      21,
+      2,
+      "CLIP"
+    ],
+    [
+      80,
+      14,
+      0,
+      12,
+      0,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
