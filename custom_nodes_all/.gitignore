@@ -1,0 +1,6 @@
+
+# Backups
+*.tar
+*.tgz
+backup_repo_*.tgz
+backup_custom_nodes_all_*.tgz

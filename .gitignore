@@ -1,0 +1,20 @@
+backup_repo_*.tgz
+# --- Backups / archives
+*.tar
+*.tgz
+*.zip
+
+# --- Model weights / large binaries
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+
+# --- Large/cache folders (adjust as needed)
+models/
+outputs/
+videos/
+checkpoints/
+cache/
+__pycache__/
+.DS_Store

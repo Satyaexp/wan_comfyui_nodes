@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-detail-daemon"
+description = "A port of muerrilla's sd-webui-Detail-Daemon as a node for ComfyUI, to adjust sigmas that generally enhance details, and possibly remove unwanted bokeh or background blurring."
+version = "1.1.2"
+license = {file = "LICENSE"}
+dependencies = ["matplotlib"]
+
+[project.urls]
+Repository = "https://github.com/Jonseed/ComfyUI-Detail-Daemon"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "jonseed"
+DisplayName = "ComfyUI-Detail-Daemon"
+Icon = "https://raw.githubusercontent.com/Jonseed/ComfyUI-Detail-Daemon/refs/heads/main/DetailDaemonIcon.jpg"
