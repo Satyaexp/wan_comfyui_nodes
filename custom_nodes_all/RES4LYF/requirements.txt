@@ -1,4 +1,0 @@
-opencv-python
-matplotlib
-pywavelets
-numpy>=1.26.4
