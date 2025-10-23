@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-logic"
+description = "An extension to ComfyUI that introduces logic nodes and conditional rendering capabilities."
+version = "1.2.0"
+license = "MIT"
+
+[project.urls]
+Repository = "https://github.com/theUpsider/ComfyUI-Logic"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "theupsider"
+DisplayName = "ComfyUI-Logic"
+Icon = ""
