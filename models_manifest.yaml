@@ -35,13 +35,13 @@ lora:
     repo: lightx2v/Wan2.2-Lightning
     file: Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
     url: https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
-    dest: /workspace/ComfyUI/lora/
+    dest: /workspace/ComfyUI/models/loras/
 
   - name: LightX2V LoRA (High)
     repo: lightx2v/Wan2.2-Lightning
     file: Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
     url: https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
-    dest: /workspace/ComfyUI/lora/
+    dest: /workspace/ComfyUI/models/loras/
 
 frame_interpolation:
   - name: RIFE Interpolation
